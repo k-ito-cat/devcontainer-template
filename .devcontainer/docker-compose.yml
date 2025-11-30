@@ -1,15 +1,14 @@
-version: "3.9"
-
 services:
   app:
     build:
       context: ..
       dockerfile: .devcontainer/Dockerfile
-    volumes:
-      - ..:/workspace:cached
-    command: sleep infinity
+    command: ["sleep", "infinity"]
     depends_on:
-      - db
+      db:
+        condition: service_started
+    volumes:
+      - ..:/workspace
 
   db:
     image: postgres:16
@@ -18,8 +17,6 @@ services:
       POSTGRES_USER: dev
       POSTGRES_PASSWORD: dev
       POSTGRES_DB: app
-    ports:
-      - "5432:5432"
     volumes:
       - db-data:/var/lib/postgresql/data
 
