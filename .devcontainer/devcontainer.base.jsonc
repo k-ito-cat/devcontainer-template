@@ -5,7 +5,7 @@
   "workspaceFolder": "/workspace",
   "remoteUser": "root",
   "forwardPorts": [5432],
-  "postCreateCommand": "mise install",
+  "postCreateCommand": "mise install && corepack enable && corepack prepare pnpm@latest --activate",
   "customizations": {
     "vscode": {
       "settings": {

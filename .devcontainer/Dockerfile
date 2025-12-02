@@ -9,12 +9,8 @@ RUN apt-get update && apt-get install -y \
     build-essential \
   && rm -rf /var/lib/apt/lists/*
 
-ENV PATH="/root/.local/bin:/root/.local/share/mise/shims:${PATH}"
-
 RUN curl https://mise.run | sh
 
-RUN mise install node@24 && mise use -g node@24
-
-RUN corepack enable && corepack prepare pnpm@latest --activate
+ENV PATH="/root/.local/bin:/root/.local/share/mise/shims:${PATH}"
 
 WORKDIR /workspace
