@@ -1,0 +1,11 @@
+{
+  "name": "devcontainer-template",
+  "extends": "./devcontainer.base.json",
+  "mounts": [
+    "source=${localEnv:HOME}/.ssh,target=/root/.ssh,type=bind",
+    "source=${localEnv:HOME}/.ssh/agent.sock,target=/ssh-agent,type=bind"
+  ],
+  "remoteEnv": {
+    "SSH_AUTH_SOCK": "/ssh-agent"
+  }
+}
