@@ -1,1 +1,22 @@
+node_modules/
+dist/
+build/
+coverage/
+.tmp/
+.temp/
+
+bun.lockb
+
+pnpm-debug.log
+.pnpm-store/
+
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json
+
 .devcontainer/devcontainer.json
+docker-data/
+docker-volume/
+
+# frontend/
+# backend/
